@@ -15,7 +15,7 @@ schedule_files = sorted(glob.glob("schedules/schedule*html"))
 unique_years = sorted({re.findall('(\d\d\d\d)', a)[0]:None for a in schedule_files}.keys())
 
 cur_year = dt.datetime.utcnow().year
-cur_quarter = int(dt.datetime.utcnow().month/3) + 1
+cur_quarter = int((dt.datetime.utcnow().month - 1)/3) + 1
 
 html = '<h1><a href="schedules/schedule-{0}Q{1}.html">Current: {0}Q{1}</a></h1>\n'.format(cur_year, cur_quarter)
 for cur_year in unique_years:

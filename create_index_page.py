@@ -17,6 +17,12 @@ unique_years = sorted({re.findall('(\d\d\d\d)', a)[0]:None for a in schedule_fil
 cur_year = dt.datetime.utcnow().year
 cur_quarter = int((dt.datetime.utcnow().month - 1)/3) + 1
 
+with open('current.html', 'w') as f:
+    f.write('<meta http-equiv="refresh" content="0; URL=\'schedules/schedule-{0}Q{1}.html\'" />'.format(cur_year, cur_quarter))
+
+with open('current-ToO.html', 'w') as f:
+    f.write('<meta http-equiv="refresh" content="0; URL=\'schedules/schedule-{0}Q{1}.html#Approved_ToO_Programs\'" />'.format(cur_year, cur_quarter))
+
 html = '<h1><a href="schedules/schedule-{0}Q{1}.html">Current: {0}Q{1}</a></h1>\n'.format(cur_year, cur_quarter)
 for cur_year in unique_years:
     html += '<h1>'
@@ -27,3 +33,4 @@ for cur_year in unique_years:
 
 with open('index.html', 'w') as f:
     f.write(html)
+

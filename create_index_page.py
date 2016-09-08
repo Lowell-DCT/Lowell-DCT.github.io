@@ -12,7 +12,7 @@ import glob
 import re
 
 schedule_files = sorted(glob.glob("schedules/schedule*html"))
-unique_years = sorted({re.findall('(\d\d\d\d)', a)[0]:None for a in schedule_files}.keys())
+unique_years = sorted({re.findall('(\d\d\d\d)', a)[0]:None for a in schedule_files}.keys())[-1::-1]
 
 cur_year = dt.datetime.utcnow().year
 cur_quarter = int((dt.datetime.utcnow().month - 1)/3) + 1

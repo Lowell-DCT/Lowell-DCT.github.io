@@ -1,6 +1,0 @@
-e.g.:
-
-    git add schedule-2016Q*
-    git commit -m "uploaded current schedules"
-    git push -u origin master
-

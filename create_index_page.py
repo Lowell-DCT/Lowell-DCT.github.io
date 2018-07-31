@@ -73,7 +73,7 @@ def gen_sched_list ():
     # construct and write out index file
     html = '<h1>'
     oyr = c[0]['yr']
-    html += '<a href="{0}">Current: {1}</a> '.format(c[0]['file'], c[0]['short'])
+    html += '<a href="{0}">Latest: {1}</a> '.format(c[0]['file'], c[0]['short'])
     html += '</h1>\n<h1>'
 
     for i in c:
